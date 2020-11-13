@@ -1,0 +1,37 @@
+﻿@using FirstMvc.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@{
+    int b = 1;
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (User fml in ViewBag.firstList)
+        {
+            <tr>
+                <td>@b</td>
+                <td> @fml.FullName</td>
+                <td> @fml.Email</td>
+                <td> @fml.Phone</td>
+                <td>
+                    <a href="/User/Detail/@fml.ID">Edit</a>
+                </td>
+            </tr>
+            b++;
+        }
+    </tbody>
+</table>
